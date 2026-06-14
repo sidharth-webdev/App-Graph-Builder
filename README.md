@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# App Graph Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive "App Graph Builder" UI — Frontend Intern take-home task.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [app-graph-builder.vercel.app](https://app-graph-builder.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/sidharth-webdev/App-Graph-Builder.git
+cd App-Graph-Builder
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open **http://localhost:5173**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Scripts
+
+| Script | Command |
+|---|---|
+| Dev | `npm run dev` |
+| Build | `npm run build` |
+| Preview | `npm run preview` |
+| Lint | `npm run lint` |
+| Typecheck | `npm run typecheck` |
+
+---
+
+## Tech Stack
+
+- React + Vite + TypeScript (strict)
+- ReactFlow (xyflow) — node graph canvas
+- TanStack Query — mock API fetching and caching
+- Zustand — UI state management
+- Tailwind CSS + Radix UI (shadcn/ui base)
+
+---
+
+## Key Decisions
+
+1. **Custom event bus** for ReactFlow and Inspector sync — avoids fighting ReactFlow internal state
+2. **setTimeout mock APIs** instead of MSW — simpler, same pattern, no service worker needed
+3. **Radix UI directly** — same base as shadcn/ui without CLI setup
+4. **Zustand for UI only** — server state stays in TanStack Query
+
+---
+
+## Known Limitations
+
+- Node positions reset on page refresh
+- No edge deletion UI
+- No undo / redo
+- Settings toggles are visual only
+
+---
+
+## Bonus Features
+
+- ✅ Add Node button
+- ✅ Service vs Database node types
+- ✅ Inspector edits persist to node data
+- ✅ Keyboard shortcuts — Delete node, Fit View
+
+---
+
+## Author
+
+**Sidharth Sankar Pradhan**
+[GitHub](https://github.com/sidharth-webdev) · [LinkedIn](https://www.linkedin.com/in/sidharth-webdev) · [Portfolio](https://my-portfolio-kohl-one-13.vercel.app) 
