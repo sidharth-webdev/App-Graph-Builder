@@ -71,7 +71,9 @@ Open **http://localhost:5173**
 ## Author
 
 **Sidharth Sankar Pradhan**
-[GitHub](https://github.com/sidharth-webdev) · [LinkedIn](www.linkedin.com/in/sidharth-webdev)
+[GitHub](https://github.com/sidharth-webdev) 
+[LinkedIn](www.linkedin.com/in/sidharth-webdev)
+
 <img width="1920" height="1080" alt="Screenshot 2026-06-15 005501" src="https://github.com/user-attachments/assets/e6716562-b0ac-41af-b7c6-fb73184e121f" />
 <img width="1920" height="1080" alt="Screenshot 2026-06-15 004458" src="https://github.com/user-attachments/assets/8e7082da-eb71-4b32-81e5-f2665696accd" />
 <img width="1920" height="1080" alt="Screenshot 2026-06-15 004448" src="https://github.com/user-attachments/assets/204f73f8-cfcc-4bbf-9a57-c1415951c462" />
